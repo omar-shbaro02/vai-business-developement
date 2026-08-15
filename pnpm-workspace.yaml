@@ -1,0 +1,19 @@
+packages:
+  - apps/*
+  - packages/*
+  - services/*
+
+onlyBuiltDependencies:
+  - esbuild
+  - sharp
+
+allowBuilds:
+  esbuild: true
+
+overrides:
+  esbuild: 0.28.1
+
+catalog:
+  "@types/node": 22.20.1
+  typescript: 6.0.3
+  zod: 4.4.3

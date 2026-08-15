@@ -5,14 +5,14 @@
 
 ## Data classes
 
-| Class | Examples | Handling |
-| --- | --- | --- |
-| Public organization data | Website, industry, public location | Store with source and capture time; respect source terms. |
-| Business contact data | Name, role, work email, profile URL | Restricted to approved purpose and roles; retention review required. |
-| Relationship/access data | Referrals, mutual connections, prior contact | Sensitive commercial data; least-privilege access and audit logging. |
-| Inference | AI hypothesis, classification, summary | Never verified fact; preserve model/contract version and evidence links. |
-| Commercial decision data | Priority, override, notes, outcomes | Confidential; append-preserved history. |
-| Secrets | API tokens, credentials | Secret manager/environment injection only; never persisted as domain data or logged. |
+| Class                    | Examples                                     | Handling                                                                             |
+| ------------------------ | -------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Public organization data | Website, industry, public location           | Store with source and capture time; respect source terms.                            |
+| Business contact data    | Name, role, work email, profile URL          | Restricted to approved purpose and roles; retention review required.                 |
+| Relationship/access data | Referrals, mutual connections, prior contact | Sensitive commercial data; least-privilege access and audit logging.                 |
+| Inference                | AI hypothesis, classification, summary       | Never verified fact; preserve model/contract version and evidence links.             |
+| Commercial decision data | Priority, override, notes, outcomes          | Confidential; append-preserved history.                                              |
+| Secrets                  | API tokens, credentials                      | Secret manager/environment injection only; never persisted as domain data or logged. |
 
 ## Collection and source approval
 

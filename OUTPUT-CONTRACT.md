@@ -30,8 +30,12 @@ OpportunityStatus = DRAFT | ACTIVE | ON_HOLD | CLOSED
   "display_name": "Example",
   "website": "https://example.test",
   "domains": ["example.test"],
-  "locations": [{"country": "US", "region": "VA", "locality": "Arlington"}],
-  "industry": {"code": null, "label": "Professional services", "evidence_ids": ["ev_1"]},
+  "locations": [{ "country": "US", "region": "VA", "locality": "Arlington" }],
+  "industry": {
+    "code": null,
+    "label": "Professional services",
+    "evidence_ids": ["ev_1"]
+  },
   "account_profile": {
     "tier": "TIER_2",
     "tier_rule_version": "account-tier/0.1",
@@ -138,21 +142,67 @@ Contact availability alone cannot produce a high or medium access strength.
   "id": "assessment_opaque",
   "opportunity_id": "opp_opaque",
   "dimensions": {
-    "strategic_attractiveness": {"rating": "MODERATE", "factor_ids": ["factor_1"], "evidence_ids": ["ev_1"]},
-    "problem_evidence": {"rating": "UNKNOWN", "factor_ids": [], "evidence_ids": []},
-    "buying_readiness": {"rating": "UNKNOWN", "factor_ids": [], "evidence_ids": []},
-    "commercial_timing": {"rating": "UNKNOWN", "factor_ids": [], "evidence_ids": []},
-    "accessibility": {"rating": "WEAK", "factor_ids": ["factor_2"], "evidence_ids": ["ev_2"]},
-    "decision_maker_clarity": {"rating": "UNKNOWN", "factor_ids": [], "evidence_ids": []},
-    "budget_plausibility": {"rating": "UNKNOWN", "factor_ids": [], "evidence_ids": []},
-    "implementation_feasibility": {"rating": "UNKNOWN", "factor_ids": [], "evidence_ids": []},
-    "expected_value": {"rating": "HIGH", "factor_ids": ["factor_3"], "evidence_ids": ["ev_3"]},
-    "expected_effort": {"rating": "MODERATE", "factor_ids": ["factor_4"], "evidence_ids": ["ev_4"]},
-    "risk": {"rating": "MODERATE", "factor_ids": ["factor_5"], "evidence_ids": ["ev_5"]}
+    "strategic_attractiveness": {
+      "rating": "MODERATE",
+      "factor_ids": ["factor_1"],
+      "evidence_ids": ["ev_1"]
+    },
+    "problem_evidence": {
+      "rating": "UNKNOWN",
+      "factor_ids": [],
+      "evidence_ids": []
+    },
+    "buying_readiness": {
+      "rating": "UNKNOWN",
+      "factor_ids": [],
+      "evidence_ids": []
+    },
+    "commercial_timing": {
+      "rating": "UNKNOWN",
+      "factor_ids": [],
+      "evidence_ids": []
+    },
+    "accessibility": {
+      "rating": "WEAK",
+      "factor_ids": ["factor_2"],
+      "evidence_ids": ["ev_2"]
+    },
+    "decision_maker_clarity": {
+      "rating": "UNKNOWN",
+      "factor_ids": [],
+      "evidence_ids": []
+    },
+    "budget_plausibility": {
+      "rating": "UNKNOWN",
+      "factor_ids": [],
+      "evidence_ids": []
+    },
+    "implementation_feasibility": {
+      "rating": "UNKNOWN",
+      "factor_ids": [],
+      "evidence_ids": []
+    },
+    "expected_value": {
+      "rating": "HIGH",
+      "factor_ids": ["factor_3"],
+      "evidence_ids": ["ev_3"]
+    },
+    "expected_effort": {
+      "rating": "MODERATE",
+      "factor_ids": ["factor_4"],
+      "evidence_ids": ["ev_4"]
+    },
+    "risk": {
+      "rating": "MODERATE",
+      "factor_ids": ["factor_5"],
+      "evidence_ids": ["ev_5"]
+    }
   },
   "confidence": "LOW",
   "confidence_factors": [],
-  "missing_evidence": [{"category": "PROBLEM", "description": "string", "material": true}],
+  "missing_evidence": [
+    { "category": "PROBLEM", "description": "string", "material": true }
+  ],
   "rule_version": "qualification/0.1",
   "calculated_at": "datetime",
   "supersedes_assessment_id": null
@@ -173,8 +223,17 @@ Factor objects expose stable code, direction, description, evidence IDs, and rul
   "status": "DRAFT",
   "closure_reason": null,
   "problem_hypothesis_id": "hyp_opaque",
-  "recommended_offer": {"offer_id": null, "label": "string", "status": "HYPOTHESIS | REVIEWED | APPROVED", "evidence_ids": []},
-  "target_persona": {"role": null, "known_contact_id": null, "evidence_ids": []},
+  "recommended_offer": {
+    "offer_id": null,
+    "label": "string",
+    "status": "HYPOTHESIS | REVIEWED | APPROVED",
+    "evidence_ids": []
+  },
+  "target_persona": {
+    "role": null,
+    "known_contact_id": null,
+    "evidence_ids": []
+  },
   "access_path_ids": [],
   "current_assessment_id": null,
   "current_priority_decision_id": null,
@@ -296,7 +355,9 @@ Sensitive values are redacted from audit payloads. Audit events are append-only.
   "accepted_count": 92,
   "rejected_count": 8,
   "duplicate_candidate_count": 3,
-  "errors": [{"row": 4, "field": "website", "code": "INVALID_URL", "message": "string"}],
+  "errors": [
+    { "row": 4, "field": "website", "code": "INVALID_URL", "message": "string" }
+  ],
   "created_by": "user_opaque",
   "created_at": "datetime",
   "completed_at": null

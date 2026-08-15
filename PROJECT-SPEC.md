@@ -50,12 +50,15 @@ A Commercial Action Opportunity combines:
 ## 5. Primary users
 
 ### Primary operator
+
 VAI business-development representative.
 
 ### Primary decision owner
+
 Founder / commercial leadership.
 
 ### Secondary users
+
 - account researcher;
 - commercial strategist;
 - product lead;
@@ -90,12 +93,15 @@ The same organization may contain multiple different opportunities with differen
 Accounts may be segmented for strategic context:
 
 ### Tier 1
+
 Large strategic organizations with major upside but typically difficult access.
 
 ### Tier 2
+
 Credible medium-to-large organizations with meaningful potential and moderate uncertainty.
 
 ### Tier 3
+
 Smaller or more accessible organizations where commercial discussions may be easier or faster.
 
 **Rule:** Account tier must not directly determine pursuit priority.

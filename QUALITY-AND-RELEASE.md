@@ -9,7 +9,9 @@ Readiness requires acceptance evidence.
 ## 2. Required test layers
 
 ### Unit tests
+
 Cover:
+
 - domain rules;
 - priority calculations;
 - confidence calculations;
@@ -19,7 +21,9 @@ Cover:
 - state transitions.
 
 ### Contract tests
+
 Cover:
+
 - API schemas;
 - output contracts;
 - connector contracts;
@@ -29,7 +33,9 @@ Cover:
 - audit event contracts.
 
 ### Integration tests
+
 Cover:
+
 - source -> discovery;
 - discovery -> evidence;
 - evidence -> qualification;
@@ -39,10 +45,13 @@ Cover:
 - human decision -> history.
 
 ### Decision regression tests
+
 Must include approved commercial fixtures.
 
 ### End-to-end tests
+
 Cover:
+
 - discover/import account;
 - create evidence profile;
 - create opportunity;

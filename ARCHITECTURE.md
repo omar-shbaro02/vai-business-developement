@@ -100,39 +100,51 @@ The proposed implementation uses strict TypeScript and pnpm workspaces, Next.js 
 ## 4. Domain components
 
 ### Organization
+
 Canonical company/entity identity.
 
 ### AccountProfile
+
 Strategic and commercial context for the organization.
 
 ### EvidenceItem
+
 Traceable evidence with source, timestamp, confidence, type, and provenance.
 
 ### Signal
+
 Normalized observation derived from evidence.
 
 ### ProblemHypothesis
+
 Candidate business problem inferred from evidence. Must remain explicitly unverified unless human-validated.
 
 ### AccessPath
+
 Credible route into the account.
 
 ### CommercialOpportunity
+
 Canonical unit of prioritization.
 
 ### QualificationAssessment
+
 Structured dimension-level evaluation.
 
 ### PriorityDecision
+
 Versioned deterministic outcome of the priority engine.
 
 ### Recommendation
+
 Human-reviewable proposed next action.
 
 ### HumanDecision
+
 Explicit human response to the recommendation.
 
 ### CommercialOutcome
+
 Observed downstream result used for calibration.
 
 ## 5. Discovery layer
@@ -154,7 +166,7 @@ Every evidence item should support:
 ```text
 id
 organization_id
-opportunity_id? 
+opportunity_id?
 source_type
 source_reference
 captured_at

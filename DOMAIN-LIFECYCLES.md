@@ -68,16 +68,16 @@ Outcomes are append-only events. Corrections use a superseding event linked to t
 
 ## Authorization summary
 
-| Action | Allowed roles |
-| --- | --- |
+| Action                                | Allowed roles                                    |
+| ------------------------------------- | ------------------------------------------------ |
 | Capture evidence or draft opportunity | ADMIN, COMMERCIAL_OWNER, BD_OPERATOR, RESEARCHER |
-| Review evidence | ADMIN, COMMERCIAL_OWNER, REVIEWER |
-| Verify/reject evidence | ADMIN, COMMERCIAL_OWNER, REVIEWER |
-| Validate/reject hypothesis | ADMIN, COMMERCIAL_OWNER, REVIEWER |
-| Approve pursuit or override priority | ADMIN, COMMERCIAL_OWNER |
-| Record activity/outcome | ADMIN, COMMERCIAL_OWNER, BD_OPERATOR |
-| Merge organizations | ADMIN, COMMERCIAL_OWNER |
-| Change rule/config version | ADMIN plus recorded commercial approval |
-| Read governed data | Any authorized role within tenant scope |
+| Review evidence                       | ADMIN, COMMERCIAL_OWNER, REVIEWER                |
+| Verify/reject evidence                | ADMIN, COMMERCIAL_OWNER, REVIEWER                |
+| Validate/reject hypothesis            | ADMIN, COMMERCIAL_OWNER, REVIEWER                |
+| Approve pursuit or override priority  | ADMIN, COMMERCIAL_OWNER                          |
+| Record activity/outcome               | ADMIN, COMMERCIAL_OWNER, BD_OPERATOR             |
+| Merge organizations                   | ADMIN, COMMERCIAL_OWNER                          |
+| Change rule/config version            | ADMIN plus recorded commercial approval          |
+| Read governed data                    | Any authorized role within tenant scope          |
 
 Exact permissions are versioned policy data and tested at the API boundary.
