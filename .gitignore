@@ -1,0 +1,20 @@
+# Dependencies and build output
+node_modules/
+.next/
+dist/
+coverage/
+.turbo/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Runtime and editor artifacts
+*.log
+.DS_Store
+.idea/
+.vscode/
+tmp/
