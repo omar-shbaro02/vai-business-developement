@@ -123,3 +123,20 @@ Known Limitations: Database and external-provider readiness checks will be added
 Residual Risks: Centralized error aggregation is deployment-provider dependent and remains future configuration.  
 Human Approval: Stage 2 authorized by Omar / VAI  
 Notes: AI remains disabled by default in `.env.example`.
+
+---
+
+Task ID: TASKS 009–013  
+Task Name: Identity/audit foundation, domain types, output schemas, rule versions, and lifecycles  
+Status: COMPLETE  
+Date: 2026-08-15  
+Owner: Codex  
+Branch / Commit: `main` / batch commit containing this record  
+Artifacts Changed: `packages/auth`, `packages/domain`, `packages/contracts`, `packages/config`, `.env.example`, `PROJECT-TASKS.md`, `HANDOFF.md`  
+Tests Run: authorization policy; production authentication configuration; audit events; relationship cardinalities; malformed schemas; AI evidence boundary; access evidence; override reason; import accounting; rule registration/versioning; allowed/prohibited transitions; full repository verification  
+Test Results: PASS  
+Acceptance Evidence: all canonical models and enums compile; runtime schemas expose contract version 0.2 and reject malformed/unknown states; rule versions cannot be replaced silently; lifecycle transitions retain actors and reject prohibited paths; production/pilot configuration cannot use development authentication.  
+Known Limitations: OIDC token verification adapter and persistent audit transaction are implemented with API/database phases; no protected material-write endpoint exists yet.  
+Residual Risks: Rule definitions are JSON-cloned and must remain serializable; persistence constraints begin in TASK 020.  
+Human Approval: Stage 2 authorized by Omar / VAI  
+Notes: Backlog status fields were normalized for all 51 tasks. Thirty-eight tasks remain after this batch.

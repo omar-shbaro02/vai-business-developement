@@ -9,4 +9,14 @@ describe("API configuration", () => {
   it("rejects invalid ports", () => {
     expect(() => loadApiConfig({ API_PORT: "70000" })).toThrow();
   });
+
+  it("prohibits development authentication in production", () => {
+    expect(() =>
+      loadApiConfig({ APP_ENV: "production", AUTH_MODE: "development" }),
+    ).toThrow(/OIDC/);
+  });
+
+  it("requires OIDC configuration when OIDC mode is selected", () => {
+    expect(() => loadApiConfig({ AUTH_MODE: "oidc" })).toThrow(/OIDC/);
+  });
 });

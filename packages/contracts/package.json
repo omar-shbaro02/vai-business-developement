@@ -14,12 +14,15 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "clean": "rm -rf dist",
+    "test": "pnpm --filter @vai/domain build && vitest run",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@vai/domain": "workspace:*",
     "zod": "catalog:"
   },
   "devDependencies": {
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "vitest": "4.1.10"
   }
 }

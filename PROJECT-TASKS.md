@@ -122,7 +122,7 @@ Acceptance:
 
 ### TASK 009 — Implement identity, authorization, and audit foundations
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Depends on: TASK 006
 
@@ -138,6 +138,8 @@ Acceptance:
 ## PHASE 1 — DOMAIN AND CONTRACTS
 
 ### TASK 010 — Implement domain types
+
+**Status:** COMPLETE
 
 Create typed models for:
 
@@ -162,6 +164,8 @@ Acceptance:
 
 ### TASK 011 — Implement output schemas
 
+**Status:** COMPLETE
+
 Acceptance:
 
 - schemas reflect `OUTPUT-CONTRACT.md`;
@@ -171,6 +175,8 @@ Acceptance:
 
 ### TASK 012 — Implement rule-version framework
 
+**Status:** COMPLETE
+
 Acceptance:
 
 - every priority result records exact rule version;
@@ -178,6 +184,8 @@ Acceptance:
 - rule changes cannot silently overwrite history.
 
 ### TASK 013 — Implement lifecycle transition framework
+
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -192,6 +200,8 @@ Acceptance:
 
 ### TASK 020 — Implement database schema
 
+**Status:** NOT_STARTED
+
 Acceptance:
 
 - migrations pass from empty database;
@@ -202,6 +212,8 @@ Acceptance:
 
 ### TASK 021 — Implement organization identity and deduplication
 
+**Status:** NOT_STARTED
+
 Acceptance:
 
 - duplicate candidates detected;
@@ -211,6 +223,8 @@ Acceptance:
 
 ### TASK 022 — Implement evidence store
 
+**Status:** NOT_STARTED
+
 Acceptance:
 
 - evidence source and timestamps retained;
@@ -218,6 +232,8 @@ Acceptance:
 - AI inference cannot masquerade as evidence.
 
 ### TASK 023 — Implement audit and history store
+
+**Status:** NOT_STARTED
 
 Acceptance:
 
@@ -227,6 +243,8 @@ Acceptance:
 - superseded records remain reproducible.
 
 ### TASK 024 — Implement job/outbox and idempotency foundation
+
+**Status:** NOT_STARTED
 
 Acceptance:
 
@@ -241,6 +259,8 @@ Acceptance:
 
 ### TASK 030 — Implement source adapter contract
 
+**Status:** NOT_STARTED
+
 Acceptance:
 
 - all discovery connectors conform to common interface;
@@ -248,6 +268,8 @@ Acceptance:
 - raw source reference retained.
 
 ### TASK 031 — Implement manual/CSV discovery source
+
+**Status:** NOT_STARTED
 
 Acceptance:
 
@@ -259,6 +281,8 @@ Acceptance:
 - importer permission attestation recorded.
 
 ### TASK 032 — Implement first approved external source
+
+**Status:** NOT_STARTED
 
 Only after source/legal/terms approval.
 
@@ -275,6 +299,8 @@ Acceptance:
 
 ### TASK 040 — Implement normalized account profile
 
+**Status:** NOT_STARTED
+
 Acceptance:
 
 - identity, geography, industry, size/context fields supported;
@@ -283,6 +309,8 @@ Acceptance:
 
 ### TASK 041 — Implement signal extraction pipeline
 
+**Status:** NOT_STARTED
+
 Acceptance:
 
 - each signal points to supporting evidence;
@@ -290,6 +318,8 @@ Acceptance:
 - AI-derived signals labeled as AI-assisted.
 
 ### TASK 042 — Implement bounded AI extraction
+
+**Status:** NOT_STARTED
 
 Acceptance:
 
@@ -305,6 +335,8 @@ Acceptance:
 
 ### TASK 050 — Implement qualification dimensions
 
+**Status:** NOT_STARTED
+
 Acceptance:
 
 - dimensions calculated independently;
@@ -313,6 +345,8 @@ Acceptance:
 
 ### TASK 051 — Implement access-path assessment
 
+**Status:** NOT_STARTED
+
 Acceptance:
 
 - contact availability cannot alone become strong access;
@@ -320,6 +354,8 @@ Acceptance:
 - unknown access supported.
 
 ### TASK 052 — Implement evidence-confidence engine
+
+**Status:** NOT_STARTED
 
 Acceptance:
 
@@ -333,6 +369,8 @@ Acceptance:
 
 ### TASK 060 — Implement CommercialOpportunity lifecycle
 
+**Status:** NOT_STARTED
+
 Acceptance:
 
 - one organization can hold multiple opportunities;
@@ -341,6 +379,8 @@ Acceptance:
 
 ### TASK 061 — Implement problem-hypothesis workflow
 
+**Status:** NOT_STARTED
+
 Acceptance:
 
 - hypotheses are explicitly unverified by default;
@@ -348,6 +388,8 @@ Acceptance:
 - rejected hypotheses remain auditable.
 
 ### TASK 062 — Implement VAI offer mapping
+
+**Status:** NOT_STARTED
 
 Acceptance:
 
@@ -361,6 +403,8 @@ Acceptance:
 
 ### TASK 070 — Freeze priority rules
 
+**Status:** NOT_STARTED
+
 **HUMAN GATE**
 
 Acceptance:
@@ -372,6 +416,8 @@ Acceptance:
 
 ### TASK 071 — Implement deterministic priority engine
 
+**Status:** NOT_STARTED
+
 Acceptance:
 
 - identical inputs produce identical outputs;
@@ -381,6 +427,8 @@ Acceptance:
 - explanations match actual calculation factors.
 
 ### TASK 072 — Build decision fixtures
+
+**Status:** NOT_STARTED
 
 Fixtures must include:
 
@@ -404,6 +452,8 @@ Acceptance:
 
 ### TASK 080 — Implement next-action engine
 
+**Status:** NOT_STARTED
+
 Acceptance:
 
 - actions are human-reviewable;
@@ -412,6 +462,8 @@ Acceptance:
 - access weakness can produce access-development action.
 
 ### TASK 081 — Implement bounded AI explanation layer
+
+**Status:** NOT_STARTED
 
 Acceptance:
 
@@ -426,6 +478,8 @@ Acceptance:
 
 ### TASK 090 — Implement domain APIs
 
+**Status:** NOT_STARTED
+
 Acceptance:
 
 - typed requests/responses;
@@ -435,6 +489,8 @@ Acceptance:
 - pagination/filter and error envelopes match the Output Contract.
 
 ### TASK 091 — Implement decision/override APIs
+
+**Status:** NOT_STARTED
 
 Acceptance:
 
@@ -448,12 +504,16 @@ Acceptance:
 
 ### TASK 100 — Build Executive Overview
 
+**Status:** NOT_STARTED
+
 Acceptance:
 
 - displays governed aggregate metrics;
 - no misleading lead-volume vanity metric as primary decision signal.
 
 ### TASK 101 — Build Accounts workspace
+
+**Status:** NOT_STARTED
 
 Acceptance:
 
@@ -462,12 +522,16 @@ Acceptance:
 
 ### TASK 102 — Build Opportunities workspace
 
+**Status:** NOT_STARTED
+
 Acceptance:
 
 - priority, confidence, evidence, gaps, access, offer, and next action visible;
 - multiple opportunities per account supported.
 
 ### TASK 103 — Build Research workspace
+
+**Status:** NOT_STARTED
 
 Acceptance:
 
@@ -476,6 +540,8 @@ Acceptance:
 - new evidence updates assessments through approved pipeline.
 
 ### TASK 104 — Build Decision history
+
+**Status:** NOT_STARTED
 
 Acceptance:
 
@@ -486,6 +552,8 @@ Acceptance:
 - outcome history visible.
 
 ### TASK 105 — Accessibility and workspace usability review
+
+**Status:** NOT_STARTED
 
 Acceptance:
 
@@ -500,6 +568,8 @@ Acceptance:
 
 ### TASK 110 — Implement management reporting
 
+**Status:** NOT_STARTED
+
 Acceptance:
 
 - BD allocation view;
@@ -510,6 +580,8 @@ Acceptance:
 - qualified opportunity value per BD hour where data permits.
 
 ### TASK 111 — Implement outcome calibration
+
+**Status:** NOT_STARTED
 
 Acceptance:
 
@@ -523,9 +595,13 @@ Acceptance:
 
 ### TASK 120 — Security review
 
+**Status:** NOT_STARTED
+
 Follow `QUALITY-AND-RELEASE.md`.
 
 ### TASK 120A — Data-governance review
+
+**Status:** NOT_STARTED
 
 Acceptance:
 
@@ -536,6 +612,8 @@ Acceptance:
 
 ### TASK 120B — Backup and recovery exercise
 
+**Status:** NOT_STARTED
+
 Acceptance:
 
 - migration from empty database passes;
@@ -545,6 +623,8 @@ Acceptance:
 
 ### TASK 121 — Decision-quality review
 
+**Status:** NOT_STARTED
+
 Acceptance:
 
 - regression fixtures pass;
@@ -553,6 +633,8 @@ Acceptance:
 - AI boundary tests pass.
 
 ### TASK 122 — Pilot readiness review
+
+**Status:** NOT_STARTED
 
 **HUMAN GATE**
 
@@ -564,6 +646,8 @@ Acceptance:
 - pilot success criteria frozen.
 
 ### TASK 123 — Production readiness review
+
+**Status:** NOT_STARTED
 
 **HUMAN GATE**
 
