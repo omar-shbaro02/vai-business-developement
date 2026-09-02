@@ -4,12 +4,12 @@ Use this file whenever work moves between developers, machines, branches, or Cod
 
 ## Current state
 
-Project stage: PHASE 2 DATA FOUNDATION  
-Current status: READY_FOR_TASK_020  
+Project stage: PHASE 11 REPORTING AND CALIBRATION
+Current status: TASK_122_AWAITING_APPROVAL; TASK_032_AWAITING_APPROVAL
 Runtime implementation started: YES  
 Repository initialized: YES  
 Current branch: `main`  
-Last updated: 2026-08-15
+Last updated: 2026-09-01
 
 ## Approved artifacts
 
@@ -28,13 +28,13 @@ Last updated: 2026-08-15
 
 TASKS 001–005 approved by Omar / VAI on 2026-08-15. DEC-004 and DEC-005 are confirmed deferrals. Engineering foundation work is authorized.
 
-TASKS 006–013 are complete. Identity/capability policy, production OIDC enforcement, typed audit events, canonical domain models, runtime schemas, immutable rule versions, and governed transitions are implemented. TASK 020 (database schema) is next.
+TASKS through 121 are complete except approval-gated TASK 032. TASK 122 evidence is assembled in `PILOT-READINESS-REVIEW.md`; scope and success thresholds are frozen, but the pilot is not ready because users are unnamed and deployment identity, credentials, governance adapters, logging, and pilot PostgreSQL recovery evidence remain blocked.
 
 ## Continuation instruction for Codex
 
 1. Read `README.md`, then the approved package.
 2. Preserve approved decision boundaries; changes require synchronized, versioned records.
-3. Execute from TASK 020 in dependency order.
+3. Keep TASK 032 disabled until its source/legal/terms approval is recorded. Do not close TASK 122 until pilot users and frozen pilot success criteria are explicitly approved.
 4. Execute `PROJECT-TASKS.md` in dependency order and append evidence to `TASK-LOG.md`.
 5. Stop at every later human gate.
 6. Never hide failed tests, assumptions, missing infrastructure, or residual risk.
@@ -45,4 +45,4 @@ TASKS 006–013 are complete. Identity/capability policy, production OIDC enforc
 Owner: Omar / VAI  
 Prepared by: Codex  
 Date: 2026-08-15  
-State: Stage 1 approved; engineering foundation and Phase 1 domain/contracts complete. Thirty-eight governed tasks remain.
+State: Implementation and technical reviews are complete through TASK 121. TASK 122 and TASK 032 await approval; TASK 123 remains not started and cannot begin before a completed pilot.

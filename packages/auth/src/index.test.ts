@@ -23,4 +23,13 @@ describe("authorization policy", () => {
       authorize({ ...reader, authenticated: false }, "governed:read"),
     ).toThrow(/Unauthenticated/);
   });
+
+  it("reserves export and deletion for administrators", () => {
+    expect(() =>
+      authorize({ ...reader, roles: ["COMMERCIAL_OWNER"] }, "data:export"),
+    ).toThrow(/Forbidden/);
+    expect(
+      authorize({ ...reader, roles: ["ADMIN"] }, "data:delete"),
+    ).toBeTruthy();
+  });
 });

@@ -1,0 +1,3 @@
+DROP TABLE IF EXISTS discovery_import_errors, discovery_records, discovery_imports, outbox_events, background_jobs, lifecycle_transitions, audit_events, rule_versions, commercial_outcomes, human_decisions, recommendations, priority_decisions, qualification_assessments, access_paths, signals, evidence_items, offer_mappings, opportunity_versions, commercial_opportunities, problem_hypotheses, account_profiles, organization_domains, organization_aliases, organization_merge_events, organization_merge_candidates, organizations, actors, tenants CASCADE;
+DROP FUNCTION IF EXISTS prevent_append_only_mutation();
+DROP TYPE IF EXISTS offer_mapping_status, import_status, job_status, merge_candidate_status, priority, opportunity_status, verification_status, freshness, confidence;

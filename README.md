@@ -2,7 +2,7 @@
 
 A governed, acceptance-driven implementation blueprint for building VAI Business Development Intelligence.
 
-**Current stage:** Stage 1 specification package approved; engineering foundation implementation authorized.
+**Current stage:** TASK 122 pilot readiness awaits named users, deployment evidence, and human approval; TASK 032 remains approval-gated.
 
 ## Engineering quick start
 

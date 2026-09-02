@@ -19,6 +19,8 @@ export const capabilities = [
   "outcome:record",
   "organization:merge",
   "rules:change",
+  "data:export",
+  "data:delete",
   "governed:read",
 ] as const;
 export type Capability = (typeof capabilities)[number];
@@ -34,7 +36,10 @@ export interface ActorContext {
 const roleCapabilities: Readonly<Record<Role, ReadonlySet<Capability>>> = {
   ADMIN: new Set(capabilities),
   COMMERCIAL_OWNER: new Set(
-    capabilities.filter((capability) => capability !== "rules:change"),
+    capabilities.filter(
+      (capability) =>
+        !["rules:change", "data:export", "data:delete"].includes(capability),
+    ),
   ),
   BD_OPERATOR: new Set([
     "evidence:capture",

@@ -200,7 +200,7 @@ Acceptance:
 
 ### TASK 020 — Implement database schema
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -212,7 +212,7 @@ Acceptance:
 
 ### TASK 021 — Implement organization identity and deduplication
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -223,7 +223,7 @@ Acceptance:
 
 ### TASK 022 — Implement evidence store
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -233,7 +233,7 @@ Acceptance:
 
 ### TASK 023 — Implement audit and history store
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -244,7 +244,7 @@ Acceptance:
 
 ### TASK 024 — Implement job/outbox and idempotency foundation
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -259,7 +259,7 @@ Acceptance:
 
 ### TASK 030 — Implement source adapter contract
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -269,7 +269,7 @@ Acceptance:
 
 ### TASK 031 — Implement manual/CSV discovery source
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -282,7 +282,7 @@ Acceptance:
 
 ### TASK 032 — Implement first approved external source
 
-**Status:** NOT_STARTED
+**Status:** AWAITING_APPROVAL
 
 Only after source/legal/terms approval.
 
@@ -299,7 +299,7 @@ Acceptance:
 
 ### TASK 040 — Implement normalized account profile
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -309,7 +309,7 @@ Acceptance:
 
 ### TASK 041 — Implement signal extraction pipeline
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -319,7 +319,7 @@ Acceptance:
 
 ### TASK 042 — Implement bounded AI extraction
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -335,7 +335,7 @@ Acceptance:
 
 ### TASK 050 — Implement qualification dimensions
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -345,7 +345,7 @@ Acceptance:
 
 ### TASK 051 — Implement access-path assessment
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -355,7 +355,7 @@ Acceptance:
 
 ### TASK 052 — Implement evidence-confidence engine
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -369,7 +369,7 @@ Acceptance:
 
 ### TASK 060 — Implement CommercialOpportunity lifecycle
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -379,7 +379,7 @@ Acceptance:
 
 ### TASK 061 — Implement problem-hypothesis workflow
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -389,7 +389,7 @@ Acceptance:
 
 ### TASK 062 — Implement VAI offer mapping
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -403,7 +403,7 @@ Acceptance:
 
 ### TASK 070 — Freeze priority rules
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 **HUMAN GATE**
 
@@ -416,7 +416,7 @@ Acceptance:
 
 ### TASK 071 — Implement deterministic priority engine
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -428,7 +428,7 @@ Acceptance:
 
 ### TASK 072 — Build decision fixtures
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Fixtures must include:
 
@@ -452,7 +452,7 @@ Acceptance:
 
 ### TASK 080 — Implement next-action engine
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -463,7 +463,7 @@ Acceptance:
 
 ### TASK 081 — Implement bounded AI explanation layer
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -478,7 +478,7 @@ Acceptance:
 
 ### TASK 090 — Implement domain APIs
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -490,7 +490,7 @@ Acceptance:
 
 ### TASK 091 — Implement decision/override APIs
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -504,7 +504,7 @@ Acceptance:
 
 ### TASK 100 — Build Executive Overview
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -513,7 +513,7 @@ Acceptance:
 
 ### TASK 101 — Build Accounts workspace
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -522,7 +522,7 @@ Acceptance:
 
 ### TASK 102 — Build Opportunities workspace
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -531,7 +531,7 @@ Acceptance:
 
 ### TASK 103 — Build Research workspace
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -541,7 +541,7 @@ Acceptance:
 
 ### TASK 104 — Build Decision history
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -553,7 +553,7 @@ Acceptance:
 
 ### TASK 105 — Accessibility and workspace usability review
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -568,7 +568,7 @@ Acceptance:
 
 ### TASK 110 — Implement management reporting
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -581,7 +581,7 @@ Acceptance:
 
 ### TASK 111 — Implement outcome calibration
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -595,13 +595,13 @@ Acceptance:
 
 ### TASK 120 — Security review
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Follow `QUALITY-AND-RELEASE.md`.
 
 ### TASK 120A — Data-governance review
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -612,7 +612,7 @@ Acceptance:
 
 ### TASK 120B — Backup and recovery exercise
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -623,7 +623,7 @@ Acceptance:
 
 ### TASK 121 — Decision-quality review
 
-**Status:** NOT_STARTED
+**Status:** COMPLETE
 
 Acceptance:
 
@@ -634,7 +634,7 @@ Acceptance:
 
 ### TASK 122 — Pilot readiness review
 
-**Status:** NOT_STARTED
+**Status:** AWAITING_APPROVAL
 
 **HUMAN GATE**
 

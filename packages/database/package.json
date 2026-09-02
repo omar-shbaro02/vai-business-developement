@@ -1,0 +1,39 @@
+{
+  "name": "@vai/database",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist tsconfig.tsbuildinfo",
+    "db:generate": "drizzle-kit generate --config=drizzle.config.ts",
+    "db:migrate": "drizzle-kit migrate --config=drizzle.config.ts",
+    "test": "pnpm --filter @vai/domain build && pnpm --filter @vai/auth build && pnpm --filter @vai/discovery build && pnpm --filter @vai/enrichment build && pnpm --filter @vai/qualification build && pnpm --filter @vai/opportunity build && pnpm --filter @vai/priority build && pnpm --filter @vai/recommendation build && vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@vai/auth": "workspace:*",
+    "@vai/domain": "workspace:*",
+    "@vai/discovery": "workspace:*",
+    "@vai/enrichment": "workspace:*",
+    "@vai/qualification": "workspace:*",
+    "@vai/opportunity": "workspace:*",
+    "@vai/priority": "workspace:*",
+    "@vai/recommendation": "workspace:*",
+    "drizzle-orm": "0.45.2",
+    "pg": "8.23.0"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.5.8",
+    "@types/pg": "8.23.1",
+    "drizzle-kit": "0.31.10"
+  }
+}
