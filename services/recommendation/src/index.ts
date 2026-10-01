@@ -164,3 +164,77 @@ export async function explainRecommendation(
     model: provider.model,
   };
 }
+
+export interface ApproachStrategyInput {
+  organizationName: string;
+  industry: string;
+  region: string;
+  observedNeeds: Array<{
+    statement: string;
+    evidenceIds: string[];
+    status: "RAW" | "REVIEWED" | "VERIFIED";
+  }>;
+  approvedOffers: Array<{
+    name: string;
+    problemTags: string[];
+    targetRoles: string[];
+  }>;
+}
+
+export interface ApproachStrategy {
+  positioning: string;
+  targetRoles: string[];
+  openingAngle: string;
+  recommendedOffer: string;
+  nextAction: string;
+  evidenceIds: string[];
+  evidenceGaps: string[];
+  requiresHumanApproval: true;
+}
+
+export function buildApproachStrategy(
+  input: ApproachStrategyInput,
+): ApproachStrategy {
+  const supportedNeeds = input.observedNeeds.filter(
+    (need) =>
+      need.status !== "RAW" &&
+      need.statement.trim().length > 0 &&
+      need.evidenceIds.length > 0,
+  );
+  if (supportedNeeds.length === 0)
+    return {
+      positioning: `Research ${input.organizationName} before selecting a positioning hypothesis`,
+      targetRoles: [
+        "Business or operational leader responsible for the problem area",
+      ],
+      openingAngle: `Validate the organization's current priorities in ${input.region}`,
+      recommendedOffer: "No offer recommended yet",
+      nextAction: "Collect reviewed evidence for a material business problem",
+      evidenceIds: [],
+      evidenceGaps: ["Reviewed problem evidence", "Approved offer fit"],
+      requiresHumanApproval: true,
+    };
+
+  const need = supportedNeeds[0]!,
+    normalizedNeed = need.statement.toLowerCase(),
+    offer = input.approvedOffers.find((candidate) =>
+      candidate.problemTags.some((tag) =>
+        normalizedNeed.includes(tag.toLowerCase()),
+      ),
+    );
+  return {
+    positioning: `Position VAI around the evidenced need: ${need.statement}`,
+    targetRoles:
+      offer?.targetRoles.length && offer.targetRoles.every(Boolean)
+        ? [...offer.targetRoles]
+        : ["Business or operational leader responsible for the problem area"],
+    openingAngle: `Lead with a question about ${need.statement.toLowerCase()} rather than an unsupported solution claim`,
+    recommendedOffer: offer?.name ?? "No approved offer matched yet",
+    nextAction: offer
+      ? "Review the evidence and approve tailored outreach"
+      : "Map the evidenced need to an approved VAI offer",
+    evidenceIds: [...new Set(need.evidenceIds)],
+    evidenceGaps: offer ? [] : ["Approved offer fit"],
+    requiresHumanApproval: true,
+  };
+}

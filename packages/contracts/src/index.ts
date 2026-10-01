@@ -438,3 +438,67 @@ export const apiErrorSchema = z
       .strict(),
   })
   .strict();
+
+export const prospectSearchRequestSchema = z
+  .object({
+    industry: z.string().trim().min(2).max(120),
+    region: z.string().trim().min(2).max(120),
+    tier: z
+      .enum(["TIER_1", "TIER_2", "TIER_3", "UNCLASSIFIED"])
+      .nullable()
+      .default(null),
+    cursor: z.string().min(1).nullable().default(null),
+    limit: z.coerce.number().int().min(1).max(50).default(20),
+  })
+  .strict();
+
+export const prospectStrategySchema = z
+  .object({
+    positioning: z.string().min(1),
+    target_roles: z.array(z.string().min(1)).min(1),
+    opening_angle: z.string().min(1),
+    recommended_offer: z.string().min(1),
+    next_action: z.string().min(1),
+    evidence_gaps: z.array(z.string().min(1)),
+    requires_human_approval: z.literal(true),
+  })
+  .strict();
+
+export const prospectSearchResultSchema = z
+  .object({
+    organization_id: id,
+    legal_name: z.string().min(1),
+    display_name: z.string().min(1),
+    website: z.url().nullable(),
+    industry: z.string().nullable(),
+    locations: z.array(
+      z
+        .object({
+          country: z.string().nullable(),
+          region: z.string().nullable(),
+          locality: z.string().nullable(),
+        })
+        .strict(),
+    ),
+    tier: z.enum(["TIER_1", "TIER_2", "TIER_3", "UNCLASSIFIED"]),
+    tier_rule_version: z.string().min(1),
+    tier_reasons: z.array(z.string().min(1)),
+    evidence_ids: z.array(id),
+    strategy: prospectStrategySchema,
+  })
+  .strict();
+
+export const prospectSearchResponseSchema = z
+  .object({
+    data: z.array(prospectSearchResultSchema),
+    page: z
+      .object({
+        cursor: z.string().nullable(),
+        has_more: z.boolean(),
+      })
+      .strict(),
+  })
+  .strict();
+
+export type ProspectSearchRequest = z.infer<typeof prospectSearchRequestSchema>;
+export type ProspectSearchResult = z.infer<typeof prospectSearchResultSchema>;

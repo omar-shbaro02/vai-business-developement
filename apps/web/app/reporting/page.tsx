@@ -24,6 +24,7 @@ export default function ReportingPage() {
         <nav aria-label="Primary navigation">
           <a href="/">◫ Overview</a>
           <a href="/accounts">◎ Accounts</a>
+          <a href="/search">⌕ Prospect search</a>
           <a href="/opportunities">◇ Opportunities</a>
           <a href="/research">
             ⌕ Research <b>7</b>

@@ -56,9 +56,18 @@ importers:
       '@vai/config':
         specifier: workspace:*
         version: link:../../packages/config
+      '@vai/contracts':
+        specifier: workspace:*
+        version: link:../../packages/contracts
+      '@vai/database':
+        specifier: workspace:*
+        version: link:../../packages/database
       '@vai/observability':
         specifier: workspace:*
         version: link:../../packages/observability
+      '@vai/recommendation':
+        specifier: workspace:*
+        version: link:../../services/recommendation
       fastify:
         specifier: 5.12.0
         version: 5.12.0
@@ -81,6 +90,9 @@ importers:
 
   apps/web:
     dependencies:
+      '@vai/contracts':
+        specifier: workspace:*
+        version: link:../../packages/contracts
       next:
         specifier: 16.3.1
         version: 16.3.1(@types/node@22.20.1)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -169,6 +181,9 @@ importers:
       '@vai/auth':
         specifier: workspace:*
         version: link:../auth
+      '@vai/contracts':
+        specifier: workspace:*
+        version: link:../contracts
       '@vai/discovery':
         specifier: workspace:*
         version: link:../../services/discovery

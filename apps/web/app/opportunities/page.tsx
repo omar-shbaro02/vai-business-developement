@@ -76,6 +76,7 @@ export default function OpportunitiesPage() {
         <nav aria-label="Primary navigation">
           <a href="/">◫ Overview</a>
           <a href="/accounts">◎ Accounts</a>
+          <a href="/search">⌕ Prospect search</a>
           <a className="active" aria-current="page" href="/opportunities">
             ◇ Opportunities
           </a>

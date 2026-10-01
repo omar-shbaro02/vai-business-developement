@@ -14,6 +14,19 @@ pnpm verify
 pnpm dev
 ```
 
+## Local PostgreSQL
+
+Copy `.env.example` to the ignored `.env` file once on each machine, then start and migrate the development database:
+
+```bash
+pnpm db:up
+pnpm db:migrate
+```
+
+PostgreSQL listens only on `127.0.0.1:5432` and stores data in a Compose-managed `vai_postgres_data` volume. Use `pnpm db:logs` to inspect it and `pnpm db:down` to stop it. `docker compose down` preserves data; deleting the named volume is intentionally not part of the project scripts because it is destructive.
+
+The checked-in credentials are local-development defaults only. Pilot and production must use secret injection, TLS, and separate least-privilege runtime and migration roles.
+
 - Web workspace: `apps/web`
 - HTTP API and health endpoints: `apps/api`
 - Background worker: `apps/worker`

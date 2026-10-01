@@ -1,5 +1,10 @@
 import { type ActorContext, authorize } from "@vai/auth";
 import { createLoggerOptions } from "@vai/observability";
+import {
+  prospectSearchRequestSchema,
+  type ProspectSearchRequest,
+  type ProspectSearchResult,
+} from "@vai/contracts";
 import Fastify, { type FastifyInstance, type FastifyRequest } from "fastify";
 import { z, ZodError } from "zod";
 
@@ -8,6 +13,10 @@ export interface Page<T> {
   page: { cursor: string | null; has_more: boolean };
 }
 export interface ApiServices {
+  searchProspects(
+    actor: ActorContext,
+    query: ProspectSearchRequest,
+  ): Promise<Page<ProspectSearchResult>>;
   listOrganizations(
     actor: ActorContext,
     query: { cursor: string | null; limit: number; filter: string | null },
@@ -36,7 +45,7 @@ export interface ApiServices {
 }
 export interface ApiOptions {
   resolveActor?(request: FastifyRequest): Promise<ActorContext> | ActorContext;
-  services?: ApiServices;
+  services?: Partial<ApiServices>;
   rateLimit?: { max: number; windowMs: number };
 }
 class RateLimitError extends Error {}
@@ -44,6 +53,7 @@ const unavailable = async (): Promise<never> => {
   throw new Error("Service unavailable");
 };
 const defaultServices: ApiServices = {
+  searchProspects: unavailable,
   listOrganizations: unavailable,
   listOpportunities: unavailable,
   getEvidence: unavailable,
@@ -82,7 +92,7 @@ const decisionBody = z
 
 export function createApp(options: ApiOptions = {}): FastifyInstance {
   const app = Fastify({ logger: createLoggerOptions({ service: "api" }) }),
-    services = options.services ?? defaultServices,
+    services = { ...defaultServices, ...options.services },
     rateLimit = options.rateLimit ?? { max: 120, windowMs: 60_000 },
     requests = new Map<string, { count: number; resetsAt: number }>();
   const actor = async (request: FastifyRequest) => {
@@ -168,6 +178,14 @@ export function createApp(options: ApiOptions = {}): FastifyInstance {
     const context = await actor(request);
     authorize(context, "governed:read");
     return services.listOrganizations(context, pageQuery.parse(request.query));
+  });
+  app.post("/v1/prospect-search", async (request) => {
+    const context = await actor(request);
+    authorize(context, "governed:read");
+    return services.searchProspects(
+      context,
+      prospectSearchRequestSchema.parse(request.body),
+    );
   });
   app.get("/v1/opportunities", async (request) => {
     const context = await actor(request);

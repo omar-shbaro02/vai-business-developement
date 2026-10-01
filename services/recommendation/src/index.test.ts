@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   explainRecommendation,
   recommendNextAction,
+  buildApproachStrategy,
   type RecommendationInput,
 } from "./index.js";
 const base: RecommendationInput = {
@@ -90,5 +91,47 @@ describe("recommendations", () => {
       action,
     );
     expect(failed.origin).toBe("DETERMINISTIC");
+  });
+});
+
+describe("approach strategy", () => {
+  it("returns a research strategy when no reviewed problem is supported", () => {
+    const strategy = buildApproachStrategy({
+      organizationName: "Example Logistics",
+      industry: "Trade and logistics",
+      region: "Northern Virginia",
+      observedNeeds: [],
+      approvedOffers: [],
+    });
+    expect(strategy.recommendedOffer).toBe("No offer recommended yet");
+    expect(strategy.evidenceGaps).toContain("Reviewed problem evidence");
+  });
+
+  it("maps reviewed evidence only to a matching approved offer", () => {
+    const strategy = buildApproachStrategy({
+      organizationName: "Example Logistics",
+      industry: "Trade and logistics",
+      region: "Northern Virginia",
+      observedNeeds: [
+        {
+          statement: "Forecast accuracy is limiting capacity planning",
+          evidenceIds: ["ev-1"],
+          status: "REVIEWED",
+        },
+      ],
+      approvedOffers: [
+        {
+          name: "Planning diagnostic",
+          problemTags: ["forecast", "planning"],
+          targetRoles: ["COO", "Head of Planning"],
+        },
+      ],
+    });
+    expect(strategy).toMatchObject({
+      recommendedOffer: "Planning diagnostic",
+      targetRoles: ["COO", "Head of Planning"],
+      evidenceIds: ["ev-1"],
+      requiresHumanApproval: true,
+    });
   });
 });

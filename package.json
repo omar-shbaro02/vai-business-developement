@@ -10,6 +10,10 @@
   "scripts": {
     "build": "pnpm -r --if-present build",
     "clean": "pnpm -r --if-present clean",
+    "db:down": "docker compose down",
+    "db:logs": "docker compose logs -f postgres",
+    "db:migrate": "sh -c 'set -a; [ ! -f .env ] || . ./.env; set +a; pnpm --filter @vai/database db:migrate'",
+    "db:up": "docker compose up -d --wait postgres",
     "dev": "pnpm --parallel --filter './apps/*' dev",
     "format": "prettier --write .",
     "format:check": "prettier --check .",

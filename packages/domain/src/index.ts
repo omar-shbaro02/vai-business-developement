@@ -1,4 +1,5 @@
 export * from "./audit.js";
+export * from "./account-tier.js";
 export * from "./lifecycles.js";
 export * from "./models.js";
 export * from "./organization-identity.js";

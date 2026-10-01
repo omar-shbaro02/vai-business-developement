@@ -29,6 +29,39 @@ const owner: ActorContext = {
 const reader: ActorContext = { ...owner, roles: ["READ_ONLY"] };
 function services() {
   return {
+    async searchProspects(
+      _actor: ActorContext,
+      query: { industry: string; region: string },
+    ) {
+      return {
+        data: [
+          {
+            organization_id: "org-1",
+            legal_name: "Example Logistics LLC",
+            display_name: "Example Logistics",
+            website: "https://example.test",
+            industry: query.industry,
+            locations: [
+              { country: "US", region: query.region, locality: "Arlington" },
+            ],
+            tier: "TIER_2" as const,
+            tier_rule_version: "account-tier/draft-0.1",
+            tier_reasons: ["Commercial value is moderate"],
+            evidence_ids: ["ev-1"],
+            strategy: {
+              positioning: "Lead with the evidenced planning need",
+              target_roles: ["COO"],
+              opening_angle: "Ask about planning reliability",
+              recommended_offer: "Planning diagnostic",
+              next_action: "Review tailored outreach",
+              evidence_gaps: [],
+              requires_human_approval: true as const,
+            },
+          },
+        ],
+        page: { cursor: null, has_more: false },
+      };
+    },
     async listOrganizations(
       _actor: ActorContext,
       query: { cursor: string | null; limit: number; filter: string | null },
@@ -54,6 +87,40 @@ function services() {
 }
 
 describe("domain API", () => {
+  it("searches prospects by validated industry and region", async () => {
+    const app = createApp({ resolveActor: () => reader, services: services() });
+    apps.push(app);
+    const response = await app.inject({
+      method: "POST",
+      url: "/v1/prospect-search",
+      payload: { industry: "Trade and logistics", region: "Virginia" },
+    });
+    expect(response.statusCode).toBe(200);
+    expect(response.json()).toMatchObject({
+      data: [
+        {
+          industry: "Trade and logistics",
+          tier: "TIER_2",
+          strategy: { requires_human_approval: true },
+        },
+      ],
+    });
+  });
+
+  it("rejects a prospect search without a region", async () => {
+    const app = createApp({ resolveActor: () => reader, services: services() });
+    apps.push(app);
+    const response = await app.inject({
+      method: "POST",
+      url: "/v1/prospect-search",
+      payload: { industry: "Trade and logistics" },
+    });
+    expect(response.statusCode).toBe(400);
+    expect(response.json()).toMatchObject({
+      error: { code: "VALIDATION_ERROR" },
+    });
+  });
+
   it("returns contract pagination and applies typed filters", async () => {
     const app = createApp({ resolveActor: () => reader, services: services() });
     apps.push(app);

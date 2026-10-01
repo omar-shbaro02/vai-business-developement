@@ -658,3 +658,81 @@ Acceptance:
 - operational runbooks approved;
 - rollback/recovery documented;
 - final approval record signed.
+
+---
+
+## PHASE 13 — PROSPECT SEARCH AND APPROACH STRATEGY
+
+This phase closes the end-to-end product gap between the completed domain foundations and the user-facing workflow. External discovery remains adapter-based so TASK 032 approval does not block manual/CSV operation.
+
+### TASK 130 — Define prospect search, tiering, and strategy contracts
+
+**Status:** COMPLETE
+
+Acceptance:
+
+- industry and region are required search inputs;
+- results expose evidence-backed Tier 1, Tier 2, Tier 3, or Unclassified classification;
+- tier reasons and rule version are visible;
+- approach strategy exposes positioning, target roles, opening angle, next action, and evidence gaps;
+- insufficient evidence remains explicit;
+- exact commercial thresholds remain versioned and replaceable after owner approval.
+
+### TASK 131 — Implement database-backed prospect search API
+
+**Status:** COMPLETE
+
+Acceptance:
+
+- API is connected to PostgreSQL in the running application;
+- industry and region filters are validated and tenant-scoped;
+- pagination and tier filtering are supported;
+- manual/CSV records are searchable without an external connector;
+- API integration tests use a real disposable PostgreSQL database.
+
+### TASK 132 — Implement deterministic account-tier engine
+
+**Status:** COMPLETE
+
+Acceptance:
+
+- Tier 1, Tier 2, Tier 3, and Unclassified outputs are deterministic;
+- classification cites evidence and a rule version;
+- missing material inputs produce Unclassified;
+- approved criteria can replace draft criteria without schema changes;
+- tier never changes opportunity priority.
+
+### TASK 133 — Implement evidence-backed approach strategy engine
+
+**Status:** COMPLETE
+
+Acceptance:
+
+- strategy is derived from stored account and opportunity evidence;
+- recommended offer, positioning, target roles, and opening angle are visible;
+- unsupported claims are excluded;
+- evidence gaps produce research actions;
+- all outreach remains human-approved.
+
+### TASK 134 — Build interactive prospect search workspace
+
+**Status:** COMPLETE
+
+Acceptance:
+
+- user can submit industry and region;
+- loading, empty, validation, and service-error states are accessible;
+- results can be filtered by tier;
+- result cards show evidence, tier rationale, and approach strategy;
+- sample hard-coded result data is removed from the search workflow.
+
+### TASK 135 — Integrate discovery-to-strategy workflow
+
+**Status:** IN_PROGRESS
+
+Acceptance:
+
+- manual and CSV discovery feed the same search pipeline;
+- approved external connectors can be added without changing the UI contract;
+- enrichment, classification, and strategy generation are idempotent;
+- a complete industry-and-region workflow passes end-to-end tests.

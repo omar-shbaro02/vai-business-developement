@@ -13,8 +13,9 @@ export * from "./opportunity-store.js";
 export * from "./priority-store.js";
 export * from "./recommendation-store.js";
 export * from "./decision-store.js";
+export * from "./prospect-search-store.js";
 
 export function createDatabase(databaseUrl: string) {
   const pool = new Pool({ connectionString: databaseUrl });
-  return { db: drizzle(pool), close: () => pool.end() };
+  return { db: drizzle(pool), pool, close: () => pool.end() };
 }

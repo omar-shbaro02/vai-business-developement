@@ -81,6 +81,7 @@ export default function ResearchPage() {
         <nav aria-label="Primary navigation">
           <a href="/">◫ Overview</a>
           <a href="/accounts">◎ Accounts</a>
+          <a href="/search">⌕ Prospect search</a>
           <a href="/opportunities">◇ Opportunities</a>
           <a className="active" aria-current="page" href="/research">
             ⌕ Research <b>7</b>

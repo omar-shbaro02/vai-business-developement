@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@vai/auth": "workspace:*",
+    "@vai/contracts": "workspace:*",
     "@vai/domain": "workspace:*",
     "@vai/discovery": "workspace:*",
     "@vai/enrichment": "workspace:*",

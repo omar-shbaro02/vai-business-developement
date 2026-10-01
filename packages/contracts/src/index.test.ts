@@ -4,6 +4,8 @@ import {
   evidenceSchema,
   humanDecisionSchema,
   importResultSchema,
+  prospectSearchRequestSchema,
+  prospectSearchResultSchema,
   signalSchema,
 } from "./index.js";
 
@@ -110,5 +112,40 @@ describe("output schemas", () => {
         completed_at: time,
       }).success,
     ).toBe(false);
+  });
+
+  it("requires both industry and region for prospect search", () => {
+    expect(
+      prospectSearchRequestSchema.safeParse({ industry: "Distribution" })
+        .success,
+    ).toBe(false);
+  });
+
+  it("requires visible tier rationale and a human-reviewed strategy", () => {
+    expect(
+      prospectSearchResultSchema.safeParse({
+        organization_id: "org_1",
+        legal_name: "Example Distribution LLC",
+        display_name: "Example Distribution",
+        website: "https://example.test",
+        industry: "Distribution",
+        locations: [
+          { country: "US", region: "Virginia", locality: "Arlington" },
+        ],
+        tier: "TIER_2",
+        tier_rule_version: "account-tier/draft-0.1",
+        tier_reasons: ["Multi-location regional operation"],
+        evidence_ids: ["ev_1"],
+        strategy: {
+          positioning: "Lead with planning reliability",
+          target_roles: ["COO"],
+          opening_angle: "Discuss multi-site planning complexity",
+          recommended_offer: "Planning diagnostic",
+          next_action: "Validate the operating problem",
+          evidence_gaps: [],
+          requires_human_approval: true,
+        },
+      }).success,
+    ).toBe(true);
   });
 });

@@ -16,6 +16,10 @@ const apiSchema = baseSchema
   .extend({
     HOST: z.string().min(1).default("127.0.0.1"),
     API_PORT: z.coerce.number().int().positive().max(65535).default(4000),
+    DATABASE_URL: z
+      .string()
+      .min(1)
+      .default("postgresql://vai:vai-local-dev-only@127.0.0.1:5432/vai_bd"),
     AUTH_MODE: z.enum(["oidc", "development"]).default("development"),
     OIDC_ISSUER_URL: z.url().optional(),
     OIDC_CLIENT_ID: z.string().min(1).optional(),

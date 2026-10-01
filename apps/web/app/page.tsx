@@ -26,6 +26,7 @@ export default function HomePage() {
             ◫ Overview
           </a>
           <a href="/accounts">◎ Accounts</a>
+          <a href="/search">⌕ Prospect search</a>
           <a href="/opportunities">◇ Opportunities</a>
           <a href="/research">
             ⌕ Research <b>7</b>
